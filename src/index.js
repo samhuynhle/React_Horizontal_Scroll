@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import HorizontalScroll from "./horizontal-scroll";
 
 var image_url = 'https://get.wallhere.com/photo/mountains-nature-snow-sunrise-morning-mist-horizon-ultrawide-Alps-summit-plateau-ridge-cloud-mountain-dawn-atmospheric-phenomenon-mountainous-landforms-landform-geographical-feature-mountain-range-1689.png'
-
+var data = ["Ton", "Is", "A", "Speaker"]
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -60,18 +60,24 @@ const SampleCard = styled.div`
   flex-shrink: 0;
 `;
 
-const SampleCards = React.memo(() =>
-  Array(6)
-    .fill(0)
-    .map((_e, i) => <SampleCard key={`sampleCard-${i}`} />)
-);
-
 const HeaderText = styled.h1`
   color: white;
-  font-size: 100px;
-  font-weight: 115%
+  font-size: 75px;
+  font-weight: 115%;
   font-family: 'Montserrat';
+  padding: 2% 2% 2% 2%;
 `
+
+const SampleCards = React.memo(() =>
+    data
+    .map((_e, i) =>
+      <SampleCard key={`sampleCard-${i}`}>
+        <HeaderText>{`${_e}`}</HeaderText>
+      </SampleCard>
+    )
+);
+
+
 
 const App = () => (
   <>
@@ -83,7 +89,7 @@ const App = () => (
       <HorizontalSection>
         <HorizontalScroll>
           <CardsContainer>
-              <SampleCards />
+              <SampleCards/>
           </CardsContainer>
         </HorizontalScroll>
       </HorizontalSection>
