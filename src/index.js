@@ -4,6 +4,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 import HorizontalScroll from "./horizontal-scroll";
 
+var image_url = 'https://get.wallhere.com/photo/mountains-nature-snow-sunrise-morning-mist-horizon-ultrawide-Alps-summit-plateau-ridge-cloud-mountain-dawn-atmospheric-phenomenon-mountainous-landforms-landform-geographical-feature-mountain-range-1689.png'
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -25,9 +27,15 @@ const HorizontalSection = styled.section`
 `;
 
 const BumperSection = styled.section`
+  color: white;
   text-align: center;
   padding: 100px 16px;
-  background-color: #efefef;
+  width: 100%;
+
+  background-image:url(${image_url});
+  background-position: center, left;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const CardsContainer = styled.div`
@@ -42,8 +50,10 @@ const CardsContainer = styled.div`
 
 const SampleCard = styled.div`
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 50%;
+  width: 50%;
+  min-height: 150px;
+  min-width: 150px;
   background-color: #111f30;
   margin-right: 25px;
   flex-shrink: 0;
@@ -55,22 +65,28 @@ const SampleCards = React.memo(() =>
     .map((_e, i) => <SampleCard key={`sampleCard-${i}`} />)
 );
 
+const HeaderText = styled.h1`
+  color: white;
+  font-size: 100px;
+  font-weight: 115%
+  font-family: 'Montserrat';
+`
+
 const App = () => (
   <>
     <GlobalStyle />
     <Main>
       <BumperSection>
-        <h2>Scroll down to reach the horizontal scroll section</h2>
+        <HeaderText>Testimonials</HeaderText>
       </BumperSection>
       <HorizontalSection>
         <HorizontalScroll>
           <CardsContainer>
-            <SampleCards />
+              <SampleCards />
           </CardsContainer>
         </HorizontalScroll>
       </HorizontalSection>
       <BumperSection>
-        <h2>You have left the horizontal horizontal scroll section</h2>
       </BumperSection>
     </Main>
   </>
