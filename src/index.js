@@ -1,0 +1,80 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import styled, { createGlobalStyle } from "styled-components";
+
+import HorizontalScroll from "./horizontal-scroll";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+  }
+`;
+
+const Main = styled.main``;
+
+const HorizontalSection = styled.section`
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+`;
+
+const BumperSection = styled.section`
+  text-align: center;
+  padding: 100px 16px;
+  background-color: #efefef;
+`;
+
+const CardsContainer = styled.div`
+  position: relative;
+  height: 100%;
+  padding: 0 0 0 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const SampleCard = styled.div`
+  position: relative;
+  height: 80%;
+  width: 500px;
+  background-color: #111f30;
+  margin-right: 25px;
+  flex-shrink: 0;
+`;
+
+const SampleCards = React.memo(() =>
+  Array(6)
+    .fill(0)
+    .map((_e, i) => <SampleCard key={`sampleCard-${i}`} />)
+);
+
+const App = () => (
+  <>
+    <GlobalStyle />
+    <Main>
+      <BumperSection>
+        <h2>Scroll down to reach the horizontal scroll section</h2>
+      </BumperSection>
+      <HorizontalSection>
+        <HorizontalScroll>
+          <CardsContainer>
+            <SampleCards />
+          </CardsContainer>
+        </HorizontalScroll>
+      </HorizontalSection>
+      <BumperSection>
+        <h2>You have left the horizontal horizontal scroll section</h2>
+      </BumperSection>
+    </Main>
+  </>
+);
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
