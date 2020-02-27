@@ -23,7 +23,7 @@ const Main = styled.main``;
 const HorizontalSection = styled.section`
   position: relative;
   width: 100%;
-  min-height: 50vh;
+  min-height: 100vh;
 `;
 
 const BumperSection = styled.section`
@@ -31,6 +31,7 @@ const BumperSection = styled.section`
   text-align: center;
   padding: 100px 16px;
   width: 100%;
+  min-height: 350px;
 
   background-image:url(${image_url});
   background-position: center, left;
@@ -41,7 +42,7 @@ const BumperSection = styled.section`
 const CardsContainer = styled.div`
   position: relative;
   height: 100%;
-  padding: 0 0 0 25px;
+  padding: 0 0 25px 25px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -51,11 +52,11 @@ const CardsContainer = styled.div`
 const SampleCard = styled.div`
   position: relative;
   height: 50%;
-  width: 50%;
+  width: 65%;
   min-height: 150px;
   min-width: 150px;
   background-color: #111f30;
-  margin-right: 25px;
+  margin-right: 5%;
   flex-shrink: 0;
 `;
 
