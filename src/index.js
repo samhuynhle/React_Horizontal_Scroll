@@ -42,8 +42,8 @@ const CardsContainer = styled.div`
 
 const SampleCard = styled.div`
   position: relative;
-  height: 80%;
-  width: 500px;
+  height: 250px;
+  width: 250px;
   background-color: #111f30;
   margin-right: 25px;
   flex-shrink: 0;
