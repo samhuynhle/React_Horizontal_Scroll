@@ -5,7 +5,18 @@ import styled, { createGlobalStyle } from "styled-components";
 import HorizontalScroll from "./horizontal-scroll";
 
 var image_url = 'https://get.wallhere.com/photo/mountains-nature-snow-sunrise-morning-mist-horizon-ultrawide-Alps-summit-plateau-ridge-cloud-mountain-dawn-atmospheric-phenomenon-mountainous-landforms-landform-geographical-feature-mountain-range-1689.png'
-var data = ["Ton", "Is", "A", "Speaker", "And", "He", "Is", "A", "Good", "Dude"]
+var data = [
+  {"Name":"Ann", "Comment":"Ton is a great speaker!"},
+  {"Name":"Sam", "Comment":"Ton is a great speaker!"},
+  {"Name":"Paul", "Comment":"Ton is a great speaker!"},
+  {"Name":"Kevin", "Comment":"Ton is a great speaker!"},
+  {"Name":"Brian", "Comment":"Ton is a great speaker!"},
+  {"Name":"Steven", "Comment":"Ton is a great speaker!"},
+  {"Name":"Quynh", "Comment":"Ton is a great speaker!"},
+  {"Name":"Alex", "Comment":"Ton is a great speaker!"},
+  {"Name":"Anthony", "Comment":"Ton is a great speaker!"},
+  {"Name":"Ton", "Comment":"Ton is a great speaker!"}
+  ]
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -15,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background: #eee;
   }
 `;
 
@@ -51,15 +63,23 @@ const CardsContainer = styled.div`
 
 const SampleCard = styled.div`
   position: relative;
+
   height: 50%;
   min-height: 150px;
   max-height: 1000px;
+
   width: 65%;
   min-width: 150px;
-  max-width: 500px;
+  max-width: 800px;
+
   background-color: #111f30;
   margin-right: 5%;
   flex-shrink: 0;
+  
+  padding: 2%;
+
+  box-shadow: 3px 3px 3px grey;
+  border-radius: 5px;
 `;
 
 const HeaderText = styled.h1`
@@ -68,13 +88,22 @@ const HeaderText = styled.h1`
   font-weight: 95%;
   font-family: 'Montserrat';
   padding: 2% 2% 2% 2%;
+`;
+
+const ParagraphText = styled.p`
+  color: white;
+  font-size: 20px;
+  font-weight: 90%;
+  font-family: 'Montserrat';
+  padding: 2% 2% 2% 2%;
 `
 
 const SampleCards = React.memo(() =>
     data
     .map((_e, i) =>
       <SampleCard key={`sampleCard-${i}`}>
-        <HeaderText>{`${_e}`}</HeaderText>
+        <HeaderText>{`${_e.Name}`}</HeaderText>
+        <ParagraphText>{`${_e.Comment}`}</ParagraphText>
       </SampleCard>
     )
 );
