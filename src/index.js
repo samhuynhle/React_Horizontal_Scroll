@@ -5,7 +5,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import HorizontalScroll from "./horizontal-scroll";
 
 var image_url = 'https://get.wallhere.com/photo/mountains-nature-snow-sunrise-morning-mist-horizon-ultrawide-Alps-summit-plateau-ridge-cloud-mountain-dawn-atmospheric-phenomenon-mountainous-landforms-landform-geographical-feature-mountain-range-1689.png'
-var data = ["Ton", "Is", "A", "Speaker"]
+var data = ["Ton", "Is", "A", "Speaker", "And", "He", "Is", "A", "Good", "Dude"]
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -52,9 +52,11 @@ const CardsContainer = styled.div`
 const SampleCard = styled.div`
   position: relative;
   height: 50%;
-  width: 65%;
   min-height: 150px;
+  max-height: 1000px;
+  width: 65%;
   min-width: 150px;
+  max-width: 500px;
   background-color: #111f30;
   margin-right: 5%;
   flex-shrink: 0;
@@ -63,7 +65,7 @@ const SampleCard = styled.div`
 const HeaderText = styled.h1`
   color: white;
   font-size: 75px;
-  font-weight: 115%;
+  font-weight: 95%;
   font-family: 'Montserrat';
   padding: 2% 2% 2% 2%;
 `
